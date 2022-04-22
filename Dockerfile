@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/windows/servercore:ltsc2022
-
-# Based largely on https://github.com/fpco/windows-docker-web/blob/f8a3192e63f2e699cc67716488a633f5e0893446/Dockerfile#L9
+WORKDIR /app
+COPY . .
 
 # Restore the default Windows shell for correct batch processing.
 SHELL ["cmd", "/S", "/C"]
@@ -26,9 +26,16 @@ RUN del C:\vs_buildtools.exe
 
 ADD https://static.rust-lang.org/rustup/dist/x86_64-pc-windows-msvc/rustup-init.exe C:/rustup-init.exe
 
-RUN C:\rustup-init.exe -y -v
+RUN C:\rustup-init.exe -y --profile minimal
 RUN del C:\rustup-init.exe
 
 RUN setx /M PATH "C:\Users\ContainerAdministrator\.cargo\bin;%PATH%"
 
 #RUN cargo build --release --locked --target=x86_64-pc-windows-msvc
+
+RUN dir target\x86_64-pc-windows-msvc
+#RUN dir target\x86_64-pc-windows-msvc\release
+
+#COPY --from=0 target\x86_64-pc-windows-msvc\release\reproducible-build-basic-exp.exe /reproducible-build-basic-exp
+
+#ENTRYPOINT ["/reproducible-build-basic-exp"]
