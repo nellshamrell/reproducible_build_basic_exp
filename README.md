@@ -11,7 +11,7 @@ Simplified experiment based on https://github.com/kpcyrd/i-probably-didnt-backdo
 
 ```
 git clone git@github.com:nellshamrell/reproducible-build-basic-exp.git
-docker build .
+docker build . # This build will take awhile
 docker image ls # Note the image ID of the image you just built
 docker run --rm -v ${PWD}:C:\app -w /app <DOCKER IMAGE ID> cargo build --release --locked --target=x86_64-pc-windows-msvc
 ```

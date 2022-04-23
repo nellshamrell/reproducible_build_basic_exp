@@ -30,12 +30,3 @@ RUN C:\rustup-init.exe -y --profile minimal
 RUN del C:\rustup-init.exe
 
 RUN setx /M PATH "C:\Users\ContainerAdministrator\.cargo\bin;%PATH%"
-
-#RUN cargo build --release --locked --target=x86_64-pc-windows-msvc
-
-RUN dir target\x86_64-pc-windows-msvc
-#RUN dir target\x86_64-pc-windows-msvc\release
-
-#COPY --from=0 target\x86_64-pc-windows-msvc\release\reproducible-build-basic-exp.exe /reproducible-build-basic-exp
-
-#ENTRYPOINT ["/reproducible-build-basic-exp"]
