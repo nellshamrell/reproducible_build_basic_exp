@@ -1,4 +1,4 @@
-# reproducible-build-basic-exp
+# reproducible_build_basic_exp
 
 Simplified experiment based on https://github.com/kpcyrd/i-probably-didnt-backdoor-this, attempts to adapt it to Windows from demonstration purposes.
 
