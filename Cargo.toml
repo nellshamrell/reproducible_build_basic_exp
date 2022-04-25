@@ -1,5 +1,5 @@
 [package]
-name = "reproducible-build-basic-exp"
+name = "reproducible_build_basic_exp"
 version = "0.1.0"
 edition = "2021"
 
