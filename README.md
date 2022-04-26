@@ -2,7 +2,7 @@
 
 Simplified experiment based on https://github.com/kpcyrd/i-probably-didnt-backdoor-this, attempts to adapt it to Windows from demonstration purposes.
 
-NOTE - this does not currently work, possible due to bugs in reproducible builds on Windows or how this build environment is set up.
+NOTE - this does not currently work, likely due to [this open issue](https://github.com/rust-lang/rust/issues/88982)
 
 ## Run build
 
