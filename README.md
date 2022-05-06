@@ -17,7 +17,7 @@ In PowerShell:
 git clone git@github.com:nellshamrell/reproducible-build-basic-exp.git
 docker build . # This build will take awhile
 docker image ls # Note the image ID of the image you just built
-docker run --rm -v ${PWD}:C:\app -w /app <DOCKER IMAGE ID> cargo build --release --locked --target=x86_64-pc-windows-msvc
+docker run --rm -v ${PWD}:C:\app -w /app <DOCKER IMAGE ID> rustc --remap-path-prefix=\app=app src\main.rs --target=x86_64-pc-windows-msvc
 ```
 
 ## Check hash of produced binary
@@ -25,5 +25,5 @@ docker run --rm -v ${PWD}:C:\app -w /app <DOCKER IMAGE ID> cargo build --release
 In PowerShell:
 
 ```
-Get-FileHash -Path .\target\x86_64-pc-windows-msvc\release\reproducible_build_basic_exp.exe
+Get-FileHash -Path .\main.exe
 ```
